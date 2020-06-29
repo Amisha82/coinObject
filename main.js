@@ -1,14 +1,4 @@
 let documentBody = document.querySelector("body")
-//let coinfacebutton = document.createElement("button")
-//coinfacebutton.append("Coin")
-//documentBody.append(coinfacebutton)
-
-//coinfacebutton.addEventListener("click", function () {
-//  coin.flip()
-//let flipVal = this.state
-//console.log(flipVal)
-
-
 let coin = {
     state: 0,
     flip: function () {
@@ -25,38 +15,32 @@ let coin = {
         /* 2. Return the string "Heads" or "Tails", depending on whether
            "this.state" is 0 or 1. */
         if (this.state === 0) {
-            console.log("tail")
+            return "tail"
         }
         else {
-            console.log("head")
+            return "head"
         }
 
     },
     toHTML: function () {
-        let para = document.createElement('para');
         let image = document.createElement('img');
-        let text = document.createElement('text');
-        // let coinSide = ""
+
         image.setAttribute("width", 150)
         image.setAttribute("height", 100)
         if (this.state === 0) {
 
             image.setAttribute("src", "images.jpg/tailimage.png")
-            text.innerHTML = "tail"
+            return image;
         }
         else {
             image.setAttribute("src", "images.jpg/headimage.png")
-            text.innerHTML = "head"
+            return image;
         }
 
         /* 3. Set the properties of this image element to show either face-up
            or face-down, depending on whether this.state is 0 or 1.*/
 
-        para.append(image)
-        para.append(text)
 
-        documentBody.append(para)
-        //return image;
     }
 };
 //coin.flip();
@@ -69,9 +53,11 @@ function display20String(func) {
     while (i < num) {
         coin.flip()
         coin.toString()
-        document.write()
         i++
+
+
     }
+
 }
 display20String()
 
@@ -81,8 +67,11 @@ function display20images(f) {
     while (i < no) {
         coin.flip()
         coin.toHTML()
+        documentBody.append(coin.toHTML())
+        documentBody.append(coin.toString())
         i++
     }
+
 }
 
 display20images()
