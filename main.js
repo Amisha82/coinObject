@@ -47,31 +47,30 @@ let coin = {
 //coin.toString()
 //coin.toHTML()
 
-function display20String(func) {
+function display20String() {
     let i = 0
     let num = 20
     while (i < num) {
         coin.flip()
-        coin.toString()
+        // coin.toString()
+        documentBody.append(coin.toString())
+
         i++
-
-
     }
 
 }
 display20String()
 
-function display20images(f) {
+function display20images() {
     let i = 0;
     let no = 20
     while (i < no) {
         coin.flip()
         coin.toHTML()
         documentBody.append(coin.toHTML())
-        documentBody.append(coin.toString())
+        // documentBody.append(coin.toString())
         i++
     }
 
 }
-
 display20images()
